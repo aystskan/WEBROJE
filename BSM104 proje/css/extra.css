@@ -88,4 +88,16 @@ header.backImage .backImage-sub2 {
     #mainNavbar .navbar-nav .nav-item:last-child {
         margin-right: 0;
     }
+
+    #mainNavbar.navbar-mobile .navbar-brand {
+        font-size: 1.20em;
+    }
+   
+    #mainNavbar.navbar-mobile {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        background-color: #212529;
+    }
 }
+
+/*sürüklerkenki navbar kodları + menü aç kapa #61.ders
