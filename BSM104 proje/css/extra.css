@@ -54,11 +54,17 @@ header.backImage .backImage-sub2 {
     font-size: 1rem;
     color: #fff;
     letter-spacing: 0.06em;
+    border-radius: 5px;
+    transition: all .4s ease;
+    
 }
 #mainNavbar .navbar-nav .nav-item .nav-link.active,
 #mainNavbar .navbar-nav .nav-item .nav-link:hover {
-    color: #b490fc;
+   color:#90b7fc;
 }
+#mainNavbar .navbar-nav .nav-item:last-child .nav-link:hover {
+    color:#fff;
+    background:#90b7fc;}
 
 /* hakkında */
 .mySection {
