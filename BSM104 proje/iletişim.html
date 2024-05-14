@@ -46,11 +46,8 @@
 
                 </ul>
             </div>
-
         </div>
-
       </div>
-
     </nav>
 
     <header class="backImage text-white text-center"> <!--özelleştirilmiş sınıf-->
@@ -61,30 +58,70 @@
         </div>
 </header>
 
-<section class="mySection bg-light">
+<section id="contact" class="mySection bg-light">
     <div class="container">
         <div class="text-center mb-5" >
             <h2 class="s-heading text-uppercase">iletişim</h2>
-            <h3 class="s-subheading text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto consectetur quasi, quo soluta saepe officia harum doloribus ipsa omnis quidem hic architecto praesentium atque laboriosam rem quos minus distinctio aspernatur.</h3>
+            <h3 class="s-subheading text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
         </div>
-        <!-- novalidate attribute ile html5 js hatalarını devralıyoruz -->
-        <form id="frmContect" novalidate>
+        <!-- novalidate attribute ile html5 js hatalarını devralıyoruz+ required attr.zorunlu-boş girilemez -->
+        <form class="doğrula" action="ileti.php" id="frmContect" >
             <div class="row align-items-stretch mb-5">
                 <div class="col-md-6">
-                    <div class="form-floating mb-4">
-                        <input type="text" id="name" class="form-control" placeholder="Adınız" required>
-                        <label for="name">Adınız</label>
+                    <div class="form-floating mb-3">
+                        <input type="text" id="name" class="form-control" placeholder="Ad" required autofocus maxlength="40" aria-describedby="ErrName">
+                        <label for="name">Adınız
+                            <span class="text-danger" aria-hidden="true">*</span>
+                            <span class="visually-hidden">zorunlu alan</span>
+                        </label>
                         <div class="invalid-feedback" id="ErrName"></div>
                     </div>
-                    <div class="form-floating mb-4"></div>
-                    <div class="form-floating mb-4"></div>
+                    <div class="form-floating mb-3">
+                        <input type="text" id="surname" class="form-control" placeholder="Soyad" required maxlength="40" aria-describedby="ErrSurame">
+                        <label for="surname">Soyadınız
+                            <span class="text-danger" aria-hidden="true">*</span>
+                            <span class="visually-hidden">zorunlu alan</span></label>
+                        <div class="invalid-feedback" id="ErrSurame"></div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" id="email" class="form-control" placeholder="Eposta" required aria-describedby="ErrEmail">
+                        <label for="email">E-posta Adresiniz
+                            <span class="text-danger" aria-hidden="true">*</span>
+                            <span class="visually-hidden">zorunlu alan</span>
+                        </label>
+                        <div class="invalid-feedback" id="ErrEmail"></div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="tel" id="phone" class="form-control" placeholder="Telefon" required maxlength="15" aria-describedby="ErrPhone">
+                        <label for="phone">Telefon Numaranız
+                            <span class="text-danger" aria-hidden="true">*</span>
+                            <span class="visually-hidden">zorunlu alan</span>
+                        </label>
+                        <div class="invalid-feedback" id="ErrPhone"></div>
+                    </div>
                 </div>
-                <div class="col-md-6"></div>
+                <div class="col-md-6">
+                    <div class="form-floating form-textarea mb-md-0">
+                        <textarea id="message" class="form-control" placeholder="İleti" required maxlength="1000" aria-describedby="ErrMessage"></textarea>
+                        <label for="message">İletmek İstediğiniz Mesaj</label>
+                        <div class="invalid-feedback" id="ErrMessage"></div>
+                    </div>
+                    <div class="text-end">
+                        <span id="current-character">0</span>
+                        <span> / 1000 </span>
+                    </div>
 
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-danger btn-lg text-uppercase py-3" id="BtnContact">
+                    gönder
+                </button>
             </div>
         </form>
     </div>
 </section>
-
+<scrip src="js/bootstrap/bootstrap.bundle.min.js"></scrip>
+<script src="js/extra.js"></script>
 </body>
 </html>
