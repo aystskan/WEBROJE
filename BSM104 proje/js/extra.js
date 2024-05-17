@@ -30,7 +30,7 @@ for(let i = 0; i < BtnCanvas.length; i++) {
 (function () {
   'use strict'
  var myName = document.querySelector("#name");
- var mySurame = document.querySelector("#surname");
+ var mySurname = document.querySelector("#surname");
  var myEmail = document.querySelector("#email");
  var myPhone = document.querySelector("#phone");
  var myMessage = document.querySelector("#message");
@@ -45,11 +45,11 @@ const NumericPattern = /^([^0-9]*)$/;
 const EmailPattern = /^([a-zA-Z0-9_\-?\.?]){3,}@([a-zA-Z]){3,}\.([a-zA-Z]){2,5}$/;
 const OnlyNumberPattern = /^[0-9]*$/;
 
-myName.addEventListener("blur", controlName());
-mySurame.addEventListener("blur", controlSurame());
-myEmail.addEventListener("blur", controlEmail());
-myPhone.addEventListener("blur", controlPhone());
-myMessage.addEventListener("blur", controlMessage());
+myName.addEventListener("blur", controlName);
+mySurname.addEventListener("blur", controlSurname);
+myEmail.addEventListener("blur", controlEmail);
+myPhone.addEventListener("blur", controlPhone);
+myMessage.addEventListener("blur", controlMessage);
 
 function controlName()
  {
@@ -80,27 +80,27 @@ if (myName.value.length == 0) {
     return true;
 }
  }
-function controlSurame()
+function controlSurname()
  {
     var myError = document.querySelector("#ErrSurname");
-if (myName.value.length == 0) {
-    myName.classList.remove("is-valid");
-    myName.classList.add("is-invalid");
-    myError.textContent = "İsim alanı boş bırakılamaz";
+if (mySurname.value.length == 0) {
+    mySurname.classList.remove("is-valid");
+    mySurname.classList.add("is-invalid");
+    myError.textContent = "Soyad alanı boş bırakılamaz";
     return false;
-} else if (myName.value.length > 40) {
-    myName.classList.remove("is-valid");
-    myName.classList.add("is-invalid");
+} else if (mySurname.value.length > 40) {
+    mySurname.classList.remove("is-valid");
+    mySurname.classList.add("is-invalid");
     myError.textContent = "Soyadınız 40 karakterden fazla olamaz";
     return false;
 }else if (!NumericPattern.test(myName.value)) {
-    myName.classList.remove("is-valid");
-    myName.classList.add("is-invalid");
-    myError.textContent = "İsminizde rakam kullanamazsınız!";
+    mySurname.classList.remove("is-valid");
+    mySurname.classList.add("is-invalid");
+    myError.textContent = "Soyadınızda rakam kullanamazsınız!";
     return false;
 } else {
-    myName.classList.remove("is-invalid");
-    myName.classList.add("is-valid");
+    mySurname.classList.remove("is-invalid");
+    mySurname.classList.add("is-valid");
     return true;
 }
  }
@@ -193,16 +193,16 @@ function controlMessage()
  //validation ile doğrulamaya ihtiyacımız var-->form html hata denetlemeleri aktif tutulmadığından (index.html dekii novalidation)
 var myForms =  document.querySelector(".needs-validation");
  myForms.addEventListener("submit", function(event){
-    if(!myForms.checkVolidity() || 
+    if(!myForms.checkValidity() || 
     !controlName() || 
-    !controlSurame() || 
+    !controlSurname() || 
     !controlEmail() || 
     !controlPhone() || 
     !controlMessage()) {
         e.preventDefault();
         e.stopPropagation();
     }else{
-        document.getElementById("FrmContact").reset(); 
+        document.getElementById("frmContact").reset(); 
     }
  }, false);  
 

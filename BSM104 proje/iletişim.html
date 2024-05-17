@@ -42,7 +42,7 @@
                     <li class="nav-item"><a href="şehir.html" class="nav-link">ŞEHİRLERİM</a></li>
                     <li class="nav-item"><a href="#API" class="nav-link">İlgi Alanlarım</a></li>
                     <li class="nav-item"><a href="iletişim.html"class="nav-link">iletişim</a></li>
-                    <li class="nav-item"><a href="#oturum"class="nav-link">Login</a></li>
+                    <li class="nav-item"><a href="login.html"class="nav-link">Login</a></li>
 
                 </ul>
             </div>
@@ -65,11 +65,11 @@
             <h3 class="s-subheading text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
         </div>
         <!-- novalidate attribute ile html5 js hatalarını devralıyoruz+ required attr.zorunlu-boş girilemez -->
-        <form class="needs-validation" action="ileti.php" id="frmContect" novalidate>
+        <form class="needs-validation" action="ileti.php" method="get" id="frmContect" novalidate>
             <div class="row align-items-stretch mb-5">
                 <div class="col-md-6">
                     <div class="form-floating mb-3">
-                        <input type="text" id="name" class="form-control" placeholder="Ad" required autofocus maxlength="40" aria-describedby="ErrName">
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Ad" required autofocus maxlength="40" aria-describedby="ErrName">
                         <label for="name">Adınız
                             <span class="text-danger" aria-hidden="true">*</span>
                             <span class="visually-hidden">zorunlu alan</span>
@@ -77,14 +77,14 @@
                         <div class="invalid-feedback" id="ErrName"></div>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" id="surname" class="form-control" placeholder="Soyad" required maxlength="40" aria-describedby="ErrSurame">
+                        <input type="text" name="surname" id="surname" class="form-control" placeholder="Soyad" required maxlength="40" aria-describedby="ErrSurame">
                         <label for="surname">Soyadınız
                             <span class="text-danger" aria-hidden="true">*</span>
                             <span class="visually-hidden">zorunlu alan</span></label>
                         <div class="invalid-feedback" id="ErrSurame"></div>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="email" id="email" class="form-control" placeholder="Eposta" required aria-describedby="ErrEmail">
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Eposta" required aria-describedby="ErrEmail">
                         <label for="email">E-posta Adresiniz
                             <span class="text-danger" aria-hidden="true">*</span>
                             <span class="visually-hidden">zorunlu alan</span>
@@ -92,7 +92,7 @@
                         <div class="invalid-feedback" id="ErrEmail"></div>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="tel" id="phone" class="form-control" placeholder="Telefon" required maxlength="15" aria-describedby="ErrPhone">
+                        <input type="tel" name="phone" id="phone" class="form-control" placeholder="Telefon" required maxlength="15" aria-describedby="ErrPhone">
                         <label for="phone">Telefon Numaranız
                             <span class="text-danger" aria-hidden="true">*</span>
                             <span class="visually-hidden">zorunlu alan</span>
@@ -101,8 +101,17 @@
                     </div>
                 </div>
                 <div class="col-md-6">
+                    <div class="form-floating">
+                        <select name="konu">
+                            <option value="konu" selected disabled>KONU-seçiniz</option>
+                            <option value="kişisel">Kişisel</option>
+                            <option value="akademi">Akademik</option>
+                            <option value="hobi">İlgi Alanı</option>
+                            <option value="diğer">Diğer</option>
+                            </select>
+                    </div>
                     <div class="form-floating form-textarea mb-md-0">
-                        <textarea id="message" class="form-control" placeholder="İleti" required maxlength="1000" aria-describedby="ErrMessage"></textarea>
+                        <textarea name="message" id="message" class="form-control" placeholder="İleti" required maxlength="1000" aria-describedby="ErrMessage"></textarea>
                         <label for="message">İletmek İstediğiniz Mesaj</label>
                         <div class="invalid-feedback" id="ErrMessage"></div>
                     </div>
@@ -117,10 +126,37 @@
                 <button type="submit" class="btn btn-danger btn-lg text-uppercase py-3" id="BtnContact">
                     gönder
                 </button>
+                <button type="reset" class="btn btn-dark btn-lg text-uppercase py-3" id="BtnReset">
+                    temizle
+                </button>
             </div>
         </form>
     </div>
 </section>
+<footer class="footer" py-4>
+    <div class="row align-items-center">
+        <div class="col-lg-4 text-lg-start text-muted">
+            Copyright &copy; WeBroje 2024
+        </div>
+        <div class="col-lg-4 my-3 my-lg-0">
+            <a href="mailto: ays.taskan@gmail.com" class="btn-info mx-2 btn-social">
+                <i class="bi bi-envelope"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/ay%C5%9Fe-ta%C5%9Fkan-347326297?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="btn-info mx-2 btn-social">
+                <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://github.com/asenasahovic" class="btn-info mx-2 btn-social">
+                <i class="bi bi-github"></i>
+            </a>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+            <a href="#" class="link-info text-decorating-none me-5">Anasayfa</a>
+        </div>
+    </div>
+</footer>
+
+
+<!-- /footer -->
 <scrip src="js/bootstrap/bootstrap.bundle.min.js"></scrip>
 <script src="js/extra.js"></script>
 </body>
