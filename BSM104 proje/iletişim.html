@@ -13,6 +13,9 @@
     <style>
         @import url("css/all.css");
     </style>
+    <!-- jQuery dahil et -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/extra.css">
 </head>
@@ -40,7 +43,7 @@
                 <ul class="navbar-nav text-uppercase ms-auto py-lg-2 ">
                     <li class="nav-item"><a href="hak.html" class="nav-link btn-close-canvas">HAKKIMDA</a></li>
                     <li class="nav-item"><a href="şehir.html" class="nav-link">ŞEHİRLERİM</a></li>
-                    <li class="nav-item"><a href="#API" class="nav-link">İlgi Alanlarım</a></li>
+                    <li class="nav-item"><a href="api.html" class="nav-link">İlgi Alanlarım</a></li>
                     <li class="nav-item"><a href="iletişim.html"class="nav-link">iletişim</a></li>
                     <li class="nav-item"><a href="login.html"class="nav-link">Login</a></li>
 
@@ -77,11 +80,11 @@
                         <div class="invalid-feedback" id="ErrName"></div>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" name="surname" id="surname" class="form-control" placeholder="Soyad" required maxlength="40" aria-describedby="ErrSurame">
+                        <input type="text" name="surname" id="surname" class="form-control" placeholder="Soyad" required maxlength="40" aria-describedby="ErrSurname">
                         <label for="surname">Soyadınız
                             <span class="text-danger" aria-hidden="true">*</span>
                             <span class="visually-hidden">zorunlu alan</span></label>
-                        <div class="invalid-feedback" id="ErrSurame"></div>
+                        <div class="invalid-feedback" id="ErrSurname"></div>
                     </div>
                     <div class="form-floating mb-3">
                         <input type="email" name="email" id="email" class="form-control" placeholder="Eposta" required aria-describedby="ErrEmail">
@@ -126,6 +129,11 @@
                 <button type="submit" class="btn btn-danger btn-lg text-uppercase py-3" id="BtnContact">
                     gönder
                 </button>
+
+                <button type="button" class="btn btn-info btn-lg text-uppercase py-3" id="BtnValidateJQ">
+                    jQuery ile gönder
+                </button>
+
                 <button type="reset" class="btn btn-dark btn-lg text-uppercase py-3" id="BtnReset">
                     temizle
                 </button>
@@ -150,7 +158,7 @@
             </a>
         </div>
         <div class="col-lg-4 text-lg-end">
-            <a href="#" class="link-info text-decorating-none me-5">Anasayfa</a>
+            <a href="index.html" class="link-info text-decorating-none me-5">Anasayfa</a>
         </div>
     </div>
 </footer>

@@ -93,7 +93,7 @@ if (mySurname.value.length == 0) {
     mySurname.classList.add("is-invalid");
     myError.textContent = "Soyadınız 40 karakterden fazla olamaz";
     return false;
-}else if (!NumericPattern.test(myName.value)) {
+}else if (!NumericPattern.test(mySurname.value)) {
     mySurname.classList.remove("is-valid");
     mySurname.classList.add("is-invalid");
     myError.textContent = "Soyadınızda rakam kullanamazsınız!";
@@ -207,3 +207,69 @@ var myForms =  document.querySelector(".needs-validation");
  }, false);  
 
 })();
+
+
+// jQuery validation
+$(document).ready(function() {
+    $('#BtnValidateJQ').click(function(event) {
+        event.preventDefault();
+        var isValid = true;
+
+        // Validate name
+        if ($('#name').val().trim() === '') {
+            $('#ErrName').text('Adınız zorunludur.');
+            $('#name').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#ErrName').text('');
+            $('#name').removeClass('is-invalid');
+        }
+
+        // Validate surname
+        if ($('#surname').val().trim() === '') {
+            $('#ErrSurname').text('Soyadınız zorunludur.');
+            $('#surname').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#ErrSurname').text('');
+            $('#surname').removeClass('is-invalid');
+        }
+
+        // Validate email
+        var email = $('#email').val().trim();
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email === '' || !emailRegex.test(email)) {
+            $('#ErrEmail').text('Geçerli bir e-posta adresi giriniz.');
+            $('#email').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#ErrEmail').text('');
+            $('#email').removeClass('is-invalid');
+        }
+
+        // Validate phone
+        if ($('#phone').val().trim() === '') {
+            $('#ErrPhone').text('Telefon numaranız zorunludur.');
+            $('#phone').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#ErrPhone').text('');
+            $('#phone').removeClass('is-invalid');
+        }
+
+        // Validate message
+        if ($('#message').val().trim() === '') {
+            $('#ErrMessage').text('Mesajınız zorunludur.');
+            $('#message').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#ErrMessage').text('');
+            $('#message').removeClass('is-invalid');
+        }
+
+        if (isValid) {
+            // If all fields are valid, submit the form
+            $('#frmContect').submit();
+        }
+    });
+});

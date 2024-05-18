@@ -9,30 +9,103 @@
     <link href="img/favicon.png" rel="icon">
     <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
     
-    <title> WEBROJE | Şehirlerim </title> 
+    <title> WEBROJE | APİ </title> 
     <style>
         @import url("css/all.css");
     </style>
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/extra.css">
+
 </head>
-
 <body>
-
-    <!-- <button>GETİR</button>
-
-    <script>
-        document.querySelector("button").addEventListener("click",()=>{
-        fetch("url")
-        .then(response=>console.log(reponse))
-    })
-    </script> -->
-
+    <!-- navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar"> <!-- large altı buton + navbar sürüklemede fixlendi-->
+        <div class="container">
+          <a href="index.html" class="navbar-brand text-uppercase" title="webroje website link">WeBroje</a>
+              <!-- <img src="img/web proje.png" alt=""></a> -->
+           <!--şimdilik yazı logo eklenebilir-->
   
-    
+          <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#myNavbar"
+          aria-controls="myNavbar" aria-label="menü aç kapa butonu" aria-expanded="false"> <!-- ekran okuyucu açık mı diye soruyor hayır basınca -->
+           <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="myNavbar" aria-labelledby="myLabel">
+              <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="myLabel">Menü</h5>
+                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Kapat">
+                  </button>
+              </div>
+              <div class="offcanvas-body">
+                  <ul class="navbar-nav text-uppercase ms-auto py-lg-2 ">
+                      <li class="nav-item"><a href="hak.html" class="nav-link btn-close-canvas">HAKKIMDA</a></li>
+                      <li class="nav-item"><a href="şehir.html" class="nav-link">ŞEHİRLERİM</a></li>
+                      <li class="nav-item"><a href="api.html" class="nav-link">İlgi Alanlarım</a></li>
+                      <li class="nav-item"><a href="iletişim.html"class="nav-link">iletişim</a></li>
+                      <li class="nav-item"><a href="login.html"class="nav-link">Login</a></li>
+  
+                  </ul>
+              </div>
+  
+          </div>
+  
+        </div>
+  
+      </nav>
+  
+      <header class="backImage text-white text-center"> <!--özelleştirilmiş sınıf-->
+          <div class="container"> <!--ortalama kapsayıcı-->
+              
+                  
+  
+          </div>
+  </header>
+  <br><br>
+  <h2 class="text-center s-heading text-uppercase">İlgi Alanı</h2><br>
+  <h3 class="s-subheading text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto consectetur quasi, quo soluta saepe officia harum doloribus ipsa omnis quidem hic architecto praesentium atque laboriosam rem quos minus distinctio aspernatur.</h3><br><br>
+  
+  <br><br>
+ <div class="text-center">
+  <form action="api.php" method="post">
+    <button type="submit" class="btn btn-danger text-uppercase" id="BtnContact" >VERİLERİ ÇEK</button><br><br>
+ </div>
 
-    <scrip src="js/bootstrap/bootstrap.bundle.min.js"></scrip>
- <script src="js/extra.js"></script>
- 
+
+<!-- <button>GETİR</button>
+
+<script>
+    document.querySelector("button").addEventListener("click",()=>{
+    fetch("url")
+    .then(response=>console.log(reponse))
+})              
+</script> -->
+
+<footer class="footer" py-4>
+    <div class="row align-items-center">
+        <div class="col-lg-4 text-lg-start text-muted">
+            Copyright &copy; WeBroje 2024
+        </div>
+        <div class="col-lg-4 my-3 my-lg-0">
+            <a href="mailto: ays.taskan@gmail.com" class="btn-info mx-2 btn-social">
+                <i class="bi bi-envelope"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/ay%C5%9Fe-ta%C5%9Fkan-347326297?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="btn-info mx-2 btn-social">
+                <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://github.com/asenasahovic" class="btn-info mx-2 btn-social">
+                <i class="bi bi-github"></i>
+            </a>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+            <a href="index.html" class="link-info text-decorating-none me-5">Anasayfa</a>
+        </div>
+    </div>
+</footer>
+
+
+<!-- /footer -->
+    
+   <scrip src="js/bootstrap/bootstrap.bundle.min.js"></scrip>
+   <script src="js/extra.js"></script>
+    
 </body>
 </html>
