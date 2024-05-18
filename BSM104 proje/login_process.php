@@ -1,27 +1,26 @@
 <?php
-// Kullanıcı adı ve şifre alınıyor
-$username = $_POST['username'];
-$password = $_POST['password'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Formdan gelen verileri alalım
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-// Kullanıcı adı ve şifre boş olmamalı
-if (empty($username) || empty($password)) {
-    header("Location: login.html");
-    exit;
-}
+    // Kullanıcı adındaki @ öncesi domainsiz kısmı şifre olarak kontrol edelim
+    $expectedPassword = explode('@', $username)[0];
 
-// Kullanıcı adı kontrolü, email formatında olmalı
-if (!filter_var($username, FILTER_VALIDATE_EMAIL)) {
-    echo "Kullanıcı adı geçerli bir email adresi değil.";
-    exit;
-}
-
-// Şifre kontrolü...
-
-
-
-if ($user_number === intval($last_four_digits)) {
-    echo "Hoşgeldiniz $username";
+    // Şifre kontrolü yapalım
+    if ($password === $expectedPassword) {
+        echo "Hoş geldiniz, " . htmlspecialchars(explode('@', $username)[0]) . "!";
+        echo '<br><br><form action="login.html">
+                <input type="submit" value="Giriş Sayfasına Dön">
+              </form>';
+    } else {
+        // Şifre yanlışsa tekrar login sayfasına yönlendirelim
+        header("Location: login.html"); // login formunuzun olduğu sayfaya yönlendirin
+        exit();
+    }
 } else {
-    echo "Giriş başarısız. Kullanıcı adı ve şifreyi kontrol edin.";
+    // Eğer POST metodu ile gelmemişse login sayfasına yönlendirelim
+    header("Location: login.html"); // login formunuzun olduğu sayfaya yönlendirin
+    exit();
 }
 ?>

@@ -60,17 +60,28 @@
   
           </div>
   </header>
-  
-  <h2>Login</h2>
-    <form action="login_process.php" method="post">
-        <label for="username">Kullanıcı Adı:</label>
-        <input type="text" id="username" name="username" required><br><br>
-        
-        <label for="password">Şifre:</label>
-        <input type="password" id="password" name="password" required><br><br>
-        
-        <input type="submit" value="Giriş Yap">
-    </form>
+  <br><br>
+  <h2 class="text-center s-heading text-uppercase">Login</h2><br><br>
+<form action="login_process.php" method="post">
+    <div class="row align-items-stretch">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+    <label for="username">Kullanıcı Adı<span class="text-danger" aria-hidden="true">*</span>
+        <span class="visually-hidden">zorunlu alan</span>:</label>
+    <input type="email" id="username" name="username" class="form-control"placeholder="Eposta" required autofocus><br><br>
+
+    <label for="password">Şifre<span class="text-danger" aria-hidden="true">*</span>
+        <span class="visually-hidden">zorunlu alan</span>:</label>
+    <input type="password" id="password" name="password" class="form-control" required><br><br>
+        </div>
+    </div>
+  <div class="text-center">
+    <button type="submit" class="btn btn-danger text-uppercase" id="BtnContact">
+        giriş yap
+    </button>
+  </div>
+</form>
+
     
     
    <scrip src="js/bootstrap/bootstrap.bundle.min.js"></scrip>
