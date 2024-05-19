@@ -1,31 +1,62 @@
-window.addEventListener("DOMContentLoaded",event=>{
-    var navbarMobile=function(){
-        const nCollapsible=document.body.querySelector("#mainNavbar");
-        if(!nCollapsible){
+window.addEventListener("DOMContentLoaded", event => {
+    var navbarMobile = function () {
+        const nCollapsible = document.body.querySelector("#mainNavbar");
+        if (!nCollapsible) {
             return;
-        }if(window.scrollY === 0){
+        }
+        if (window.scrollY === 0) {
             nCollapsible.classList.remove("navbar-mobile");
-        }else{
+        } else {
             nCollapsible.classList.add("navbar-mobile");
         }
     };
     navbarMobile();
     document.addEventListener("scroll", navbarMobile);
-    const myNavbar=document.body.querySelector("mainNavbar");
-    if(myNavbar){
+    const myNavbar = document.body.querySelector("#mainNavbar");
+    if (myNavbar) {
         new bootstrap.ScrollSpy(document.body, {
-            target:"#mainNavbar",
-            offset:74
+            target: "#mainNavbar",
+            offset: 74,
         });
     }
 });
 var BtnCanvas = document.querySelectorAll(".btn-close-canvas");
-for(let i = 0; i < BtnCanvas.length; i++) {
-    BtnCanvas[i].addEventListener("click",function ()
-    {
+for (let i = 0; i < BtnCanvas.length; i++) {
+    BtnCanvas[i].addEventListener("click", function () {
         document.querySelector('[data-bs-dismiss="offcanvas"]').click();
     });
 }
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+
 
 (function () {
   'use strict'
@@ -268,7 +299,7 @@ $(document).ready(function() {
         }
 
         if (isValid) {
-            // If all fields are valid, submit the form
+            // tüm alanlar geçerliyse formu gönder
             $('#frmContect').submit();
         }
     });
